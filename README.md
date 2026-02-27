@@ -5,4 +5,5 @@ This respository contains various exercises for learning the RISC-V instruction 
 ## Setting up your environment
 
 This set of practice problems is intended to be run in RARS 1.6 using other editors may result in unexpected behavior. <br/>
-The RARS download can be found in the root readme of their github page: https://github.com/TheThirdOne/rars 
+The RARS download can be found in the root readme of their github page: https://github.com/TheThirdOne/rars <br/>
+**Make sure you have Java runtime installed**
