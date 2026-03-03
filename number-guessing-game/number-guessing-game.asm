@@ -94,19 +94,6 @@ game_loop:
     # Use only branches/jumps and the instructions you know.
     # ---------------------------------------------------------------
 
-    # Compare guess (t0) vs secret (s0).
-    # Values are expected in 0..99.
-    add t2, t0, x0
-    add t3, s0, x0
-
-compare_loop:
-    beq t2, t3, guess_correct
-    beq t2, x0, guess_too_low
-    beq t3, x0, guess_too_high
-    addi t2, t2, -1
-    addi t3, t3, -1
-    j compare_loop
-
 guess_too_low:
     la a0, too_low_msg
     jal print_str
@@ -142,10 +129,6 @@ guess_correct:
     #   if (t1 == 1) -> restart game (jump to game_restart)
     #   else         -> quit (jump to game_quit)
     # ---------------------------------------------------------------
-
-    addi t3, x0, 1
-    beq t1, t3, game_restart
-    j game_quit
 
 game_quit:
     la a0, goodbye
