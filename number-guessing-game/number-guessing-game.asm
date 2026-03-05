@@ -65,11 +65,18 @@ main:
     jal print_str
 
 game_restart:
-    # Setup game state (provided)
+    # ---------------------------------------------------------------
+    # STUDENT TODO #1: Setup game state
+    #
     # s0 = secret number
     # s1 = attempts counter
-    li s0, 37
-    li s1, 0
+    #
+    # Required behavior:
+    #   Load secret number into s0
+    #   Set attempts counter to 0
+    #
+    # Use only the instructions you know.
+    # ---------------------------------------------------------------
 
 game_loop:
     # Prompt user
@@ -84,7 +91,7 @@ game_loop:
     addi s1, s1, 1
 
     # ---------------------------------------------------------------
-    # STUDENT TODO #1: Compare guess (t0) to secret (s0)
+    # STUDENT TODO #2: Compare guess (t0) to secret (s0)
     #
     # Required behavior:
     #   if (t0 < s0)  -> jump to label: guess_too_low
@@ -123,7 +130,7 @@ guess_correct:
     add t1, a0, x0     # t1 = replay choice
 
     # ---------------------------------------------------------------
-    # STUDENT TODO #2: Replay logic
+    # STUDENT TODO #3: Replay logic
     #
     # Required behavior:
     #   if (t1 == 1) -> restart game (jump to game_restart)
